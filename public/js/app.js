@@ -1,16 +1,3 @@
-console.log("Client side javasctip file is loaded.")
-
-fetch('http://puzzle.mead.io/puzzle').then((response) => {
-    const data = response.json().then((data) => {
-        console.log(data);
-    });
-});
-
-const searchForecast = (address) => {
-    
-}
-
-
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 // const message1 = document.getElementById('message-1');
@@ -24,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value;
     message1.textContent = 'Loading...';
     message2.innerHTML = '';
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
     const data = response.json().then((data) => {
         if (data.error) {
             // message1.innerHTML = data.error;
