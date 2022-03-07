@@ -1,5 +1,5 @@
 const request = require('request');
-const env = request('../config');
+const env = require('../config');
 
 const geocode = (address, callback) => {
     const url = env.GEO_API_URL + encodeURIComponent(address) + ".json?access_token=" + env.GEO_API_KEY + "&limit=1&language=ang";

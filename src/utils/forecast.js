@@ -1,5 +1,5 @@
 const request = require('request');
-const env = request('../config');
+const env = require('../config');
 
 const forecast = (latitude, longitude, callback) => {
     const url = env.WEATHER_API_URL + "&query=" + latitude + "," + longitude;
