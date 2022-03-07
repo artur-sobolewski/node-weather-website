@@ -1,7 +1,8 @@
-const request = require('request')
+const request = require('request');
+const env = request('../config');
 
 const geocode = (address, callback) => {
-    const url = process.env.GEO_API_URL + encodeURIComponent(address) + ".json?access_token=" + process.env.GEO_API_KEY + "&limit=1&language=ang";
+    const url = env.GEO_API_URL + encodeURIComponent(address) + ".json?access_token=" + env.GEO_API_KEY + "&limit=1&language=ang";
     request({ url, json: true }, (error, {body} = {}) => {
         if (error) {
             callback('Unable to connect location service!', undefined);
